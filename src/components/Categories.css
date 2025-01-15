@@ -1,0 +1,53 @@
+
+.categories-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.category-item {
+    width: 100%; 
+    text-align: center;
+    padding: 50px 0;
+    color: #333;
+    font-family: "Arial", sans-serif;
+}
+
+
+.Headphones-bg {
+    background: linear-gradient(to right, #fefcea, #f1da36); /* Light yellow */
+}
+.Earbuds-bg {
+    background: linear-gradient(to right, #e3ffe7, #d9e7ff); /* Light green to blue */
+}
+.accessories-bg {
+    background: linear-gradient(to right, #fff1eb, #ace0f9); /* Light peach to blue */
+}
+.powerbanks-bg {
+    background: linear-gradient(to right, #dae361, #ace0f9); /* Light green */
+}
+.BackCovers-bg {
+    background: linear-gradient(to right, #5357da, #4fdb87); /* Blue to green */
+}
+.TemperGlass-bg {
+    background: linear-gradient(to right, #52d9de, #4fdb87); /* Aqua to green */
+}
+
+
+.category-item h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+/* .garments-bg {
+    background: url('../assets/garments-bg.jpg') no-repeat center center / cover;
+}
+
+.footwear-bg {
+    background: url('../assets/footwear-bg.jpg') no-repeat center center / cover;
+}
+
+.accessories-bg {
+    background: url('../assets/accessories-bg.jpg') no-repeat center center / cover;
+} */

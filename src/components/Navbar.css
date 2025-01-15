@@ -1,105 +1,146 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #E0E0E0; /* Light gray background */
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex-wrap: nowrap; /* Prevent wrapping */
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E0E0E0; /* Light gray background */
+  padding: 5px 10px; /* Reduced padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-  }
+}
+
+.navbar-logo img.logo {
+  height: 60px; /* Adjusted height to make the logo more visible */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure the logo fits well inside the container */
   
-  .navbar-logo img.logo {
-    height: 50px; /* Adjust logo size */
-    width: auto;
-    background-color: transparent; /* No background */
-  }
-  
-  .navbar-search {
-    display: flex;
-    align-items: center;
-    margin-left: 15px; /* Spacing between logo and search */
-    flex-grow: 1; /* Allow search bar to take remaining space */
-    max-width: 400px; /* Prevent search bar from getting too wide */
-  }
-  
-  .navbar-search input {
-    width: 100%; /* Full width of search container */
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    outline: none;
-    background-color: #f7f7f7; /* Slightly lighter gray for input field */
-    color: #333; /* Dark text */
-  }
-  
-  .navbar-search input::placeholder {
-    color: #888; /* Placeholder text in gray */
-  }
-  
-  .navbar-search button {
-    padding: 5px 15px;
-    border: none;
-    background-color: #333; /* Dark gray button */
-    color: white; /* White text for button */
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-  }
-  
-  .navbar-search button:hover {
-    background-color: #555; /* Slightly lighter gray on hover */
-  }
-  
-  .navbar-links {
-    display: flex;
-    align-items: center;
-    margin-left: auto; /* Push links to the right */
-    gap: 15px; /* Add spacing between links */
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: #333; /* Dark gray text */
-    font-weight: 500;
-  }
-  
-  .navbar-links a:hover {
-    color: #007bff; /* Light blue hover effect */
-  }
-  
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ensure the logo aligns with the left edge */
+  margin-left: 10px; /* Add a slight left margin for spacing */
+  background-color: #E0E0E0;} 
+
+.navbar-search {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allow search bar to take remaining space */
+  max-width: 400px; /* Adjusted max width for search bar */
+}
+
+.navbar-search input {
+  width: 100%; /* Full width of search container */
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  background-color: #f7f7f7; /* Slightly lighter gray for input field */
+  color: #333; /* Dark text */
+}
+
+.navbar-search button {
+  padding: 5px 10px; /* Reduced button padding */
+  border: none;
+  background-color: #333; /* Dark gray button */
+  color: white; /* White text for button */
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap between links */
+  margin-left: 350px;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #333; /* Dark gray text */
+  font-weight: 500;
+  padding: 5px 8px; /* Reduced padding for links */
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced spacing between buttons */
+}
+
+.navbar-icons .login,
+.navbar-icons .cart {
+  text-decoration: none;
+  color: white;
+  background-color: #cbbdbf; /* Light pink button */
+  padding: 5px 10px; /* Reduced button padding */
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.navbar-icons .login:hover,
+.navbar-icons .cart:hover {
+  background-color: #e0a1a3; /* Slightly darker pink on hover */
+}
+
+.navbar-icons .cart-count {
+  background-color: #ff0000; /* Red for cart count */
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+
+/* Hamburger Menu for Responsive Design */
+.navbar-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.navbar-links,
+.navbar-icons {
+  flex-wrap: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links,
   .navbar-icons {
+    display: none;
+    flex-direction: column;
+    background-color: #E0E0E0;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-links a,
+  .navbar-icons a {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .navbar-links.show,
+  .navbar-icons.show {
     display: flex;
-    align-items: center;
-    gap: 15px; /* Spacing between Login and Cart buttons */
   }
-  
-  .navbar-icons .login,
-  .navbar-icons .cart {
-    text-decoration: none;
-    color: white;
-    background-color: #cbbdbf; /* Light pink button */
-    padding: 5px 15px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    white-space: nowrap; /* Prevent text wrapping */
+
+  .navbar-toggle {
+    display: block;
   }
-  
-  .navbar-icons .login:hover,
-  .navbar-icons .cart:hover {
-    background-color: #cbbdbf; /* Slightly darker pink on hover */
-  }
-  
-  .navbar-icons .cart-count {
-    background-color: #ff0000; /* Red for cart count */
-    color: #fff;
-    font-size: 12px;
-    padding: 2px 5px;
-    border-radius: 50%;
-    margin-left: 5px;
-  }
-  
+}
